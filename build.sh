@@ -1,3 +1,10 @@
+BUILD_DIR="build/"
+if [ -d "$BUILD_DIR" ]; then
+	echo "Building in ${BUILD_DIR} ..."
+else
+	echo "Creating ${BUILD_DIR} to continue building ..."
+	mkdir build/
+fi
 rm -rf build/*
 cp -r extension build/extension
 cp grid.user.js build/extension
