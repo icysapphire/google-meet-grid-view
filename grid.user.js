@@ -858,7 +858,7 @@
           updateSetting('enabled', !settings['enabled'])
         }
 
-        setTimeout(() =>buttons.prepend(toggleButton),5000)
+        setTimeout(() => buttons.prepend(toggleButton), 5000)
         // buttons.prepend(toggleButton)
 
         toggleButton.innerHTML = `
@@ -879,13 +879,13 @@
               <a href="https://github.com/icysapphire/google-meet-grid-view" target="_blank">Current release</a>
             </div>
             ${
-              authorized
-                ? ''
-                : `
+          authorized
+            ? ''
+            : `
             <hr>
             <a href="https://github.com/Fugiman/google-meet-grid-view#official-releases" target="_blank">Original release here (discontinued)</a>
             `
-            }
+          }
           </div>
         `
 
@@ -1523,7 +1523,7 @@
 
     function injectHideButton(el) {
       const buttons = el.lastChild.firstChild
-      const refButton = buttons.firstChild.firstChild
+      const refButton = buttons.firstChild.children[0]
       const b = document.createElement('div')
       b.classList = '__gmgv-hide'
       b.innerHTML = `
@@ -1546,12 +1546,15 @@
         }
       }
       buttons.insertBefore(b, buttons.lastChild)
+
+      // Get Pin Button of the user
+      buttons.children[0].classList.add('pin_btn_gmgv')
     }
 
     function injectShowHideButton(el, parent) {
       const id = parent.dataset.participantId
       const hidden = hiddenIDs.has(id)
-      const refButton = el.lastChild.children[0]
+      const refButton = el.lastChild.children[1]
       parent.parentElement.parentElement.style.overflow = 'visible'
       el.style.overflow = 'visible'
       const b = document.createElement('div')
@@ -1592,6 +1595,11 @@
         toggleButton.querySelector('svg').innerHTML = settings['enabled'] ? gridOn : gridOff
         const i = toggleButton.querySelector(`input[data-gmgv-setting="${name}"]`)
         if (i) i.checked = value
+
+        // Update Hide Status of Pin Button
+        document.querySelectorAll('.pin_btn_gmgv').forEach((pinbtnelem) => {
+          pinbtnelem.style.display = settings['enabled'] ? 'none' : '';
+        });
 
         const showOnlyVideo = toggleButton.querySelector('input[data-gmgv-setting="show-only-video"]')
         showOnlyVideo.checked = settings['show-only-video'] && !settings['screen-capture-mode']
