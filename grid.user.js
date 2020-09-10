@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Google Meet Grid View
 // @namespace    https://fugi.tech/
-// @version      1.39.2
+// @version      1.40
 // @description  Adds a toggle to use a grid layout in Google Meets
-// @author       Chris Gamble
+// @author       Chris Gamble (original author), Simone Marullo (mantainer)
 // @include      https://meet.google.com/*
 // @grant        none
 // @run-at       document-idle
@@ -13,6 +13,7 @@
 // v1.39    Summer 2020 bug fix by https://github.com/icysapphire
 // v1.39.1  Improved Spanish and Catalan localizations by https://github.com/buenoudg
 // v1.39.2  Fix positioning of grid button
+// v1.40    Fix overlapping when chat is opened
 
 ;(function () {
   // If included by our extension's icon page, export translation factory
@@ -431,7 +432,6 @@
       display: grid;
       grid-auto-rows: 1fr;
       top: 50px !important;
-      right: 2px !important;
       left: 2px !important;
       bottom: 2px !important;
     }
@@ -874,14 +874,14 @@
             <hr>
             <div class="__gmgv-source-code">
               <small>v${version}</small>
-              <a href="https://github.com/Fugiman/google-meet-grid-view" target="_blank">${T('sourceCode')}</a>
+              <a href="https://github.com/icysapphire/google-meet-grid-view" target="_blank">Current release</a>
             </div>
             ${
               authorized
                 ? ''
                 : `
             <hr>
-            <a href="https://github.com/Fugiman/google-meet-grid-view#official-releases" target="_blank">${T('unauthorizedWarning')}</a>
+            <a href="https://github.com/Fugiman/google-meet-grid-view#official-releases" target="_blank">Original release here (discontinued)</a>
             `
             }
           </div>
