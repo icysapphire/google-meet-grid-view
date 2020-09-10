@@ -522,7 +522,7 @@
       display: none;
       position: absolute;
       top: 40px;
-      left: 0;
+      right: 0;
       width: 300px;
       padding: 12px;
       background: white;
