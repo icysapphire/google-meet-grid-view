@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Meet Grid View
 // @namespace    https://fugi.tech/
-// @version      1.39.1
+// @version      1.39.2
 // @description  Adds a toggle to use a grid layout in Google Meets
 // @author       Chris Gamble
 // @include      https://meet.google.com/*
@@ -12,6 +12,7 @@
 
 // v1.39    Summer 2020 bug fix by https://github.com/icysapphire
 // v1.39.1  Improved Spanish and Catalan localizations by https://github.com/buenoudg
+// v1.39.2  Fix positioning of grid button
 
 ;(function () {
   // If included by our extension's icon page, export translation factory
@@ -514,6 +515,7 @@
     .__gmgv-button > svg {
       height: 24px;
       width: 24px;
+      padding: 1em 2em;
     }
     .__gmgv-button > div {
       box-sizing: border-box;
