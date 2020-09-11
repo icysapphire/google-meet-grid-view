@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Meet Grid View
 // @namespace    https://fugi.tech/
-// @version      1.40
+// @version      1.40.1
 // @description  Adds a toggle to use a grid layout in Google Meets
 // @author       Chris Gamble (original author), Simone Marullo (mantainer)
 // @include      https://meet.google.com/*
@@ -14,6 +14,7 @@
 // v1.39.1  Improved Spanish and Catalan localizations by https://github.com/buenoudg
 // v1.39.2  Fix positioning of grid button
 // v1.40    Fix overlapping when chat is opened
+// v1.40.1  Fix color and position of grid button
 
 ;(function () {
   // If included by our extension's icon page, export translation factory
