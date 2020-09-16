@@ -526,11 +526,11 @@
       display: none;
       position: absolute;
       top: 40px;
-      right: 0;
+      left: 0;
       width: 300px;
       padding: 12px;
       background: white;
-      border-radius: 0 0 0 8px;
+      border-radius: 0 0 8px 8px;
       text-align: left;
       cursor: auto;
       line-height: 0;
@@ -700,7 +700,7 @@
       line-height: 20px;
       font-weight: 500;
     }
-  `
+  `;
     document.body.append(s)
 
     // Variables
