@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Google Meet Grid View
 // @namespace    https://fugi.tech/
-// @version      1.39.1
+// @version      1.40
 // @description  Adds a toggle to use a grid layout in Google Meets
-// @author       Chris Gamble
+// @author       Chris Gamble (original author), Simone Marullo (mantainer)
 // @include      https://meet.google.com/*
 // @grant        none
 // @run-at       document-idle
@@ -12,7 +12,7 @@
 
 // v1.39    Summer 2020 bug fix by https://github.com/icysapphire
 // v1.39.1  Improved Spanish and Catalan localizations by https://github.com/buenoudg
-
+// v1.40    Fixes
 ;(function () {
   // If included by our extension's icon page, export translation factory
   if (document.currentScript && document.currentScript.src === window.location.href.replace('popup.html', 'grid.user.js')) {
@@ -51,6 +51,8 @@
         screenCaptureModeDescription: 'Força 16:9, desactiva els noms, bloqueja els vídeos al seu lloc',
         unauthorizedWarning: "ATENCIÓ: es tracta d'una extensió no autoritzada. Instal·leu l'extensió oficial fent clic aquí.",
         duplicateWarning: 'Multiples extensions Grid View detectades. Si us plau, desinstal·leu els duplicats.',
+        currentRelease: 'Versió actual',
+        originalRelease: 'Versió original aquí (discontinuada)',
         hideParticipant: 'Amaga el participant',
         showParticipant: 'Mostra el participant',
         advancedSettingsLink: 'Mostra la configuració avançada',
@@ -121,6 +123,8 @@
         screenCaptureModeDescription: 'Forces 16:9, Disables names, Locks videos in place',
         unauthorizedWarning: 'WARNING: This is an unauthorized extension. Please install the official release by clicking here.',
         duplicateWarning: 'Multiple Grid View extensions detected. Please uninstall duplicates.',
+        currentRelease: 'Current release',
+        originalRelease: 'Original release here (discontinued)',
         hideParticipant: 'Hide Participant',
         showParticipant: 'Show Participant',
         advancedSettingsLink: 'View Advanced Settings',
@@ -163,6 +167,8 @@
         screenCaptureModeDescription: 'Fuerza 16:9, deshabilita nombres, fija el vídeo en su lugar',
         unauthorizedWarning: 'ATENCIÓN: Esta es una extensión no autorizada. Por favor, instale la versión oficial haciendo clic aquí.',
         duplicateWarning: 'Multiples extensiones Grid View detectadas. Por favor, desinstale los duplicados.',
+        currentRelease: 'Versión actual',
+        originalRelease: 'Versión original aquí (descontinuada)',
         hideParticipant: 'Oculta el participante',
         showParticipant: 'Muestra el participante',
         advancedSettingsLink: 'Muestra la configuración avanzada',
@@ -430,7 +436,6 @@
       display: grid;
       grid-auto-rows: 1fr;
       top: 50px !important;
-      right: 2px !important;
       left: 2px !important;
       bottom: 2px !important;
     }
@@ -514,13 +519,14 @@
     .__gmgv-button > svg {
       height: 24px;
       width: 24px;
+      padding: 1em 2em;
     }
     .__gmgv-button > div {
       box-sizing: border-box;
       display: none;
       position: absolute;
       top: 40px;
-      left: 0;
+      right: 0;
       width: 300px;
       padding: 12px;
       background: white;
@@ -872,14 +878,14 @@
             <hr>
             <div class="__gmgv-source-code">
               <small>v${version}</small>
-              <a href="https://github.com/Fugiman/google-meet-grid-view" target="_blank">${T('sourceCode')}</a>
+              <a href="https://github.com/icysapphire/google-meet-grid-view" target="_blank">${T('currentRelease')}</a>
             </div>
             ${
               authorized
                 ? ''
                 : `
             <hr>
-            <a href="https://github.com/Fugiman/google-meet-grid-view#official-releases" target="_blank">${T('unauthorizedWarning')}</a>
+            <a href="https://github.com/Fugiman/google-meet-grid-view#official-releases" target="_blank">${T('originalRelease')}</a>
             `
             }
           </div>
