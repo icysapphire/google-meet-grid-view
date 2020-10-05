@@ -49,3 +49,5 @@ You are not allowed to:
  - sue or otherwise hold liable Chris Gamble
 
 If you are looking for a more permissive license please email fugiman47+grid-view-extension@gmail.com
+
+---Happy Teaching:D
