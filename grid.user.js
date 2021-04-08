@@ -284,7 +284,7 @@
         modifyNames: 'Modifica il nome dei partecipanti',
         mnNative: 'Nessuna modifica ("Alfa Bravo Charlie")',
         mnFirstSpace: 'Sposta la prima parola alla fine ("Bravo Charlie, Alfa")',
-        mnLastSpace: 'Sposta l\'ultima parola all\'inizio ("Charlie, Alfa Bravo")'
+        mnLastSpace: 'Sposta l\'ultima parola all\'inizio ("Alfa Bravo, Charlie")'
       },
       ja: {
         showOnlyVideo: 'カメラをオンにしている参加者のみ',
